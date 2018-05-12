@@ -237,7 +237,7 @@
                                 "docker run -p 8080:80 -d --name tetris lrakai/tetris\n",
                                 "yum install -y ruby-2.0.0.648-33.amzn2.0.1.x86_64\n",
                                 "gem install serverspec -v 2.41.3\n",
-                                "useradd -G adm,wheel serverspec\n",
+                                "useradd -G adm,wheel,docker serverspec\n",
                                 "echo 'serverspec:1Cloud_Academy_Labs!' | chpasswd\n",
                                 "sed -i 's/\\(PasswordAuthentication \\).*/\\1yes/g' /etc/ssh/sshd_config\n",
                                 "systemctl restart sshd\n"

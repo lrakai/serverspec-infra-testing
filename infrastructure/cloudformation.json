@@ -122,7 +122,13 @@
                                 "    server  app1 10.0.2.100:8080 check\n",
                                 "EOF\n",
                                 "systemctl enable haproxy\n",
-                                "systemctl start haproxy\n"
+                                "systemctl start haproxy\n",
+                                "yum install -y ruby-2.0.0.648-33.amzn2.0.1.x86_64\n",
+                                "gem install serverspec -v 2.41.3\n",
+                                "useradd -G adm,wheel serverspec\n",
+                                "echo 'serverspec:1Cloud_Academy_Labs!' | chpasswd\n",
+                                "sed -i 's/\\(PasswordAuthentication \\).*/\\1yes/g' /etc/ssh/sshd_config\n",
+                                "systemctl restart sshd\n"
                             ]
                         ]
                     }
@@ -228,7 +234,13 @@
                                 "yum install -y docker-17.06.2ce-1.102.amzn2.x86_64\n",
                                 "systemctl enable docker\n",
                                 "systemctl start docker\n",
-                                "docker run -p 8080:80 -d --name tetris lrakai/tetris\n"
+                                "docker run -p 8080:80 -d --name tetris lrakai/tetris\n",
+                                "yum install -y ruby-2.0.0.648-33.amzn2.0.1.x86_64\n",
+                                "gem install serverspec -v 2.41.3\n",
+                                "useradd -G adm,wheel serverspec\n",
+                                "echo 'serverspec:1Cloud_Academy_Labs!' | chpasswd\n",
+                                "sed -i 's/\\(PasswordAuthentication \\).*/\\1yes/g' /etc/ssh/sshd_config\n",
+                                "systemctl restart sshd\n"
                             ]
                         ]
                     }
